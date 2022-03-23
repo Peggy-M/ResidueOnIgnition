@@ -61,7 +61,7 @@ public class TwoServlet extends HttpServlet {
                 writ="<font style='color:red;font-size:40'>用户"+username+"余额不足</font>";
             }
         }
-        //返回数据
+        //返回并更新数据，由于Coofie提取的时key值，所以balance会一直存活
         Cookie newCrd=new Cookie("balance",balance+"");
         response.addCookie(newCrd);
         out.println(writ);
