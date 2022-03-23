@@ -11,8 +11,10 @@ public class OneServlet extends HttpServlet {
         String balance=request.getParameter("balance");
         Cookie crd1=new Cookie("username",username);
         Cookie crd2=new Cookie("balance",balance);
-
-
+        
+        //指定crd2在客服端可以存活60秒
+        crd2.setMaxAge(60);
+        
         response.addCookie(crd1);
         response.addCookie(crd2);
 
